@@ -36,19 +36,31 @@
     body { background-color: #f8f5f0; color: #0f172a; }
     
     .glass-nav {
-      background: rgba(248, 245, 240, 0.85);
+      background: rgba(248, 245, 240, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(15, 23, 42, 0.05);
     }
 
-    [data-reveal] {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Animación del Menú Móvil */
+    #mobile-menu {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    [data-reveal].active {
+    
+    /* FIX DE VISIBILIDAD */
+    [data-reveal] {
       opacity: 1;
       transform: translateY(0);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .js-loaded [data-reveal] {
+       opacity: 0;
+       transform: translateY(20px);
+    }
+    
+    [data-reveal].active {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
 
     .custom-scroll::-webkit-scrollbar { width: 4px; }
@@ -61,13 +73,15 @@
 
   <nav class="fixed top-0 w-full z-50 glass-nav">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-4">
+      
+      <div class="flex items-center gap-4 z-50 relative">
         <a href="#inicio" class="flex items-center gap-2">
           <div class="h-10 w-[1px] bg-luxe-gold"></div>
-        <div class="leading-none">
-          <h1 class="font-serif text-2xl font-bold tracking-tight">AIZA 2026</h1>
-          <p class="text-[9px] uppercase tracking-[0.3em] text-luxe-gold font-bold">Festividad Patronal</p>
-        </div>
+          <div class="leading-none">
+            <h1 class="font-serif text-2xl font-bold tracking-tight text-luxe-navy">AIZA 2026</h1>
+            <p class="text-[9px] uppercase tracking-[0.3em] text-luxe-gold font-bold">Festividad Patronal</p>
+          </div>
+        </a>
       </div>
       
       <div class="hidden lg:flex items-center gap-8 text-[10px] uppercase font-bold tracking-widest text-slate-500">
@@ -79,9 +93,15 @@
         <a href="#galeria" class="hover:text-luxe-wine transition-colors">Galería</a>
       </div>
 
-      <a href="#programa" class="bg-luxe-navy text-white text-[10px] font-bold px-6 py-3 rounded-full hover:bg-luxe-wine transition-all shadow-lg">
+      <a href="#programa" class="hidden lg:block bg-luxe-navy text-white text-[10px] font-bold px-6 py-3 rounded-full hover:bg-luxe-wine transition-all shadow-lg">
         PROGRAMA
       </a>
+
+      <button id="menu-btn" class="lg:hidden z-50 text-luxe-navy p-2 focus:outline-none hover:text-luxe-gold transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
   </nav>
 
@@ -109,11 +129,11 @@
       <div class="flex flex-wrap justify-center gap-6 reveal" data-reveal style="transition-delay: 300ms">
         <div class="bg-white/50 border border-slate-200 px-8 py-4 rounded-2xl">
           <p class="text-[10px] uppercase font-bold text-luxe-gold mb-1">Ameniza</p>
-          <p class="font-serif text-lg italic">Legendarios Guapos Internacionales</p>
+          <p class="font-serif text-lg italic">Legendarios Guapos Internacional</p>
         </div>
         <div class="bg-white/50 border border-slate-200 px-8 py-4 rounded-2xl">
           <p class="text-[10px] uppercase font-bold text-luxe-gold mb-1">Director</p>
-          <p class="font-serif text-lg italic">Carlos Contreras Alvarez (Gato de Huancayo)</p>
+          <p class="font-serif text-lg italic">Carlos Contreras Alvarez ("Gato de Huancayo")</p>
         </div>
       </div>
     </div>
@@ -124,7 +144,7 @@
       <div class="reveal" data-reveal>
         <div class="relative group">
           <div class="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[3/4] bg-slate-100">
-             <img src="./virgen-candelaria.png" class="w-full h-full object-cover">
+             <img src="./virgen-candelaria.png" class="w-full h-full object-cover" onerror="this.style.display='none'">
           </div>
           <div class="absolute -bottom-8 -left-8 bg-luxe-navy p-10 rounded-3xl text-white shadow-2xl border border-white/10">
             <p class="font-serif text-4xl italic text-luxe-gold">Aiza</p>
@@ -136,7 +156,7 @@
         <span class="text-luxe-wine font-bold text-xs uppercase tracking-widest mb-4">Comunicado Oficial</span>
         <h3 class="font-serif text-5xl md:text-6xl mb-8 leading-tight">Invitación <br><span class="italic text-luxe-gold">de Honor</span></h3>
         <p class="text-slate-500 text-lg leading-relaxed mb-8">
-          Los Mayordomos de la Tercera y Cuarta Cuadrilla tienen el honor de invitar a usted y su digna familia a la gran fiesta religiosa en honor a la <strong>Santísima Virgen de la Candelaria</strong> de la Comunidad de la Legua Jaqaru de Aiza.
+          Los Mayordomos de la Tercera y Cuarta Cuadrilla tienen el honor de invitar a usted y su digna familia a la gran fiesta religiosa en honor a la <strong>Santísima Virgen de la Candelaria</strong> de la Comunidad Campesina de la Legua Jaqaru de Aiza.
         </p>
         <div class="bg-luxe-sand p-8 rounded-3xl border-l-8 border-luxe-gold shadow-inner">
           <p class="italic font-serif text-2xl text-luxe-navy leading-snug">
@@ -151,7 +171,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-20 reveal" data-reveal>
         <h2 class="font-serif text-5xl italic mb-4 text-luxe-wine">Programa de Actividades</h2>
-        <p class="text-slate-400 font-bold uppercase text-[10px] tracking-[0.3em]">Agenda completa del 01 al 06 de Febrero</p>
+        <p class="text-slate-400 font-bold uppercase text-[10px] tracking-[0.3em]">Agenda completa del 01 al 06 de Febrero 2026</p>
       </div>
 
       <div id="programWrap" class="grid grid-cols-1 gap-6">
@@ -179,12 +199,12 @@
                 </div>
                 <div class="bg-white p-8 rounded-[2rem] border border-slate-200 shadow-xl">
                     <h4 class="font-bold uppercase text-xs tracking-widest text-luxe-gold mb-6">Comisión de Fiesta</h4>
-                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                        <li><span class="block text-[10px] text-slate-400 font-bold uppercase">Presidenta</span>Carolina Orellana Vicente</li>
-                        <li><span class="block text-[10px] text-slate-400 font-bold uppercase">Tesorera</span>Teófila Angeles Payano</li>
-                        <li><span class="block text-[10px] text-slate-400 font-bold uppercase">Secretario</span>Arnaldo Melgarejo Castro</li>
-                        <li><span class="block text-[10px] text-slate-400 font-bold uppercase">Fiscales</span>Santa Manrique y Justina Sanabria</li>
-                        <li class="col-span-2"><span class="block text-[10px] text-slate-400 font-bold uppercase">Vocales</span>América Negrón Lermo y Yolanda Iturrizaga</li>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-6 text-sm">
+                        <li><span class="block text-[10px] text-slate-400 font-bold uppercase mb-1">Presidenta</span>Carolina Orellana Vicente</li>
+                        <li><span class="block text-[10px] text-slate-400 font-bold uppercase mb-1">Tesorera</span>Teófila Angeles Payano</li>
+                        <li><span class="block text-[10px] text-slate-400 font-bold uppercase mb-1">Secretario</span>Arnaldo Melgarejo Castro</li>
+                        <li><span class="block text-[10px] text-slate-400 font-bold uppercase mb-1">Fiscales</span>Santa Manrique y Justina Sanabria</li>
+                        <li class="sm:col-span-2"><span class="block text-[10px] text-slate-400 font-bold uppercase mb-1">Vocales</span>América Negrón Lermo y Yolanda Iturrizaga</li>
                     </ul>
                 </div>
             </div>
@@ -198,7 +218,7 @@
                 <svg width="100" height="100" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
             </div>
             <span class="text-[10px] font-bold uppercase tracking-widest text-luxe-gold">Orquesta Invitada</span>
-            <h4 class="font-serif text-2xl mt-4 italic text-luxe-sand leading-tight">Legendarios Guapos Internacionales</h4>
+            <h4 class="font-serif text-2xl mt-4 italic text-luxe-sand leading-tight">Legendarios Guapos Internacional</h4>
             <p class="text-xs mt-6 font-bold text-white/40 uppercase tracking-widest tracking-tighter">Gato de Huancayo • Dir. Carlos Contreras</p>
           </div>
         </div>
@@ -208,6 +228,7 @@
                 <h4 class="font-bold uppercase text-xs tracking-widest text-luxe-gold">Mayordomos</h4>
                 <span id="m-count" class="bg-luxe-navy text-white text-[10px] px-3 py-1 rounded-full font-bold"></span>
             </div>
+            <p class="text-[10px] uppercase font-bold text-slate-400 mb-2">3ra y 4ta Cuadrilla</p>
             <div id="m-list" class="space-y-3 text-sm text-slate-600 max-h-[500px] overflow-y-auto pr-4 custom-scroll">
                 </div>
         </div>
@@ -217,6 +238,7 @@
                 <h4 class="font-bold uppercase text-xs tracking-widest text-luxe-gold">Mayoralas</h4>
                 <span id="ml-count" class="bg-white/10 text-white text-[10px] px-3 py-1 rounded-full font-bold border border-white/10"></span>
             </div>
+            <p class="text-[10px] uppercase font-bold text-white/40 mb-2">Relación General 2026</p>
             <div id="ml-list" class="space-y-3 text-sm text-white/60 max-h-[500px] overflow-y-auto pr-4 custom-scroll">
                 </div>
         </div>
@@ -230,8 +252,8 @@
         <div id="prizesWrap" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
             </div>
         <div class="mt-12 bg-white p-8 rounded-3xl border border-slate-200 text-center reveal" data-reveal>
-            <p class="text-sm font-bold text-luxe-gold uppercase tracking-widest mb-2">Evaluación</p>
-            <p class="font-serif text-2xl italic">Se premiará la mejor vestimenta, baile de pascua y sonajeros.</p>
+            <p class="text-sm font-bold text-luxe-gold uppercase tracking-widest mb-2">Reglamento</p>
+            <p class="font-serif text-xl italic text-slate-600">El jurado calificará los 4 días. Los concursantes que no participen todos los días no podrán acceder a premios.</p>
         </div>
     </div>
   </section>
@@ -258,7 +280,7 @@
 
         <div class="lg:col-span-3 flex flex-col gap-6 reveal" data-reveal style="transition-delay: 400ms">
           <div class="bg-luxe-wine p-10 rounded-[2.5rem] text-white flex-1 flex flex-col justify-center">
-            <span class="text-[10px] font-bold uppercase tracking-widest opacity-60">Especial</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest opacity-60">Donación de Programa</span>
             <p class="font-serif text-2xl mt-4 mb-2 leading-tight">Partido Somos Perú - Ayza</p>
             <p class="text-4xl font-bold text-luxe-sand mt-auto">S/. 400.00</p>
           </div>
@@ -292,58 +314,239 @@
     </div>
   </footer>
 
+  <div id="mobile-menu" 
+       class="fixed inset-0 z-[100] flex flex-col justify-center items-center gap-8 transform translate-x-full lg:hidden"
+       style="background-color: #0f172a;">
+      
+      <button id="close-menu-btn" class="absolute top-6 right-6 p-2 text-white/50 hover:text-luxe-gold transition-colors focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+      </button>
+
+      <a href="#inicio" class="mobile-link font-serif text-4xl text-[#f8f5f0] italic hover:text-[#b45309] transition-colors">Inicio</a>
+      <a href="#programa" class="mobile-link font-serif text-4xl text-[#f8f5f0] italic hover:text-[#b45309] transition-colors">Agenda</a>
+      <a href="#comision" class="mobile-link font-serif text-4xl text-[#f8f5f0] italic hover:text-[#b45309] transition-colors">Comisión</a>
+      <a href="#premios" class="mobile-link font-serif text-4xl text-[#f8f5f0] italic hover:text-[#b45309] transition-colors">Premios</a>
+      <a href="#donaciones" class="mobile-link font-serif text-4xl text-[#f8f5f0] italic hover:text-[#b45309] transition-colors">Donaciones</a>
+      <a href="#galeria" class="mobile-link font-serif text-4xl text-[#f8f5f0] italic hover:text-[#b45309] transition-colors">Galería</a>
+      
+      <div class="w-12 h-[1px] bg-white/20 my-4"></div>
+      
+      <a href="#programa" class="mobile-link text-[10px] uppercase font-bold tracking-widest text-[#0f172a] bg-[#b45309] text-white px-8 py-4 rounded-full shadow-xl hover:bg-white hover:text-[#0f172a] transition-colors">
+          Ver Programa Completo
+      </a>
+  </div>
+
   <script>
-    // DATA COMPLETA DEL USUARIO Y CORREGIDA
+    // --- LÓGICA DEL MENÚ MÓVIL Y BOTÓN CERRAR ---
+    const menuBtn = document.getElementById('menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        if(isMenuOpen) {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        }
+    }
+
+    if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+    if(closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // --- DATA ACTUALIZADA DEL PROGRAMA 2026 ---
     const program = [
-      { day: "01 Feb", date: "Domingo", events: [{t:"01:00 p.m.", d:"Recibimiento a la Orquesta en el pueblo de Canchan"}, {t:"01:30 p.m.", d:"Almuerzo en Canchan con la orquesta"}, {t:"04:00 p.m.", d:"Continuación del viaje a Aiza"}, {t:"05:00 p.m.", d:"Recibimiento en 'Muchca' - Aiza"}, {t:"07:00 p.m.", d:"Víspera en la Iglesia de Aiza"}, {t:"08:00 p.m.", d:"Entrega de donaciones"}, {t:"08:45 p.m.", d:"Visita a mayoralas con noche buena y zapateo"}, {t:"11:30 p.m.", d:"Elección de pascuas"}] },
-      { day: "02 Feb", date: "Lunes", events: [{t:"06:00 a.m.", d:"Salva de 21 camaretazos de honor"}, {t:"09:00 a.m.", d:"Desayuno ofrecido por mayordomos"}, {t:"10:00 a.m.", d:"Recojo de mayoralas con chamicito de pisco"}, {t:"10:30 a.m.", d:"Misa memoria Florisa Payano y Vidal Sanabria"}, {t:"11:00 a.m.", d:"Solemne Misa Central Virgen de la Candelaria"}, {t:"11:30 a.m.", d:"Procesión por las calles principales"}, {t:"02:00 p.m.", d:"Presentación mayordomos 2026 con mulisa"}, {t:"04:00 p.m.", d:"Gran almuerzo general"}, {t:"05:00 p.m.", d:"Baile costumbrista hasta las últimas consecuencias"}] },
-      { day: "03 Feb", date: "Martes", events: [{t:"06:00 a.m.", d:"Salva de 21 camaretazos"}, {t:"09:00 a.m.", d:"Desayuno general"}, {t:"10:00 a.m.", d:"Recojo de mayoralas"}, {t:"12:00 m.", d:"Baile de la pascua encabezado por el pastor"}, {t:"04:00 p.m.", d:"Almuerzo de la 1ra Cuadrilla"}, {t:"05:00 p.m.", d:"Baile de pascua con sonajeros"}] },
-      { day: "04 Feb", date: "Miércoles", events: [{t:"06:00 a.m.", d:"Salva de 21 camaretazos"}, {t:"09:00 a.m.", d:"Desayuno de mayordomos"}, {t:"10:30 a.m.", d:"Partida a loza Muchca para concurso"}, {t:"11:30 a.m.", d:"Gran concurso de danza y zapateo"}, {t:"04:00 p.m.", d:"Almuerzo de la 2da Cuadrilla"}, {t:"06:00 p.m.", d:"Continuación del baile de pascua"}] },
-      { day: "05 Feb", date: "Jueves", events: [{t:"06:00 a.m.", d:"Salva de 21 camaretazos"}, {t:"08:00 a.m.", d:"Gran desayuno"}, {t:"11:00 a.m.", d:"Romería en camposanto de Tuyllututa"}, {t:"12:30 m.", d:"Baile general en loza deportiva"}, {t:"01:00 p.m.", d:"Cargada y plantado del Wachiwalito (árbol)"}] },
-      { day: "06 Feb", date: "Viernes", events: [{t:"06:00 a.m.", d:"Despedida orquesta con 'Wallqa' (collar)"}, {t:"04:00 p.m.", d:"Almuerzo de despedida 2026"}, {t:"07:00 p.m.", d:"Inscripción nuevos mayordomos"}, {t:"08:00 p.m.", d:"Premiación final"}, {t:"09:00 p.m.", d:"Proclamación Mayordomos 2027"}, {t:"11:00 p.m.", d:"Cortamonte y cierre"}] }
+      { 
+        day: "01 Feb", 
+        date: "Domingo", 
+        events: [
+            {t:"01:00 p.m.", d:"Recibimiento a la Orquesta 'Legendarios Guapos Internacional' en Canchan."},
+            {t:"01:30 p.m.", d:"Gran almuerzo en Canchan con la orquesta."},
+            {t:"04:00 p.m.", d:"Continuación del viaje a Aiza."},
+            {t:"05:00 p.m.", d:"Recibimiento en 'Muchca' - Aiza."},
+            {t:"07:00 p.m.", d:"Víspera en la Iglesia de Aiza."},
+            {t:"08:00 p.m.", d:"Entrega de donaciones."},
+            {t:"08:45 p.m.", d:"Visita a mayoralas con 'noche buena', pascua y zapateo."},
+            {t:"11:30 p.m.", d:"Elección de pascuas por Mayordomos y Mayoralas."}
+        ] 
+      },
+      { 
+        day: "02 Feb", 
+        date: "Lunes", 
+        events: [
+            {t:"06:00 a.m.", d:"Salva de 21 camaretazos a la Virgen."},
+            {t:"09:00 a.m.", d:"Desayuno ofrecido por mayordomos."},
+            {t:"10:00 a.m.", d:"Recojo de mayoralas con chamicito de pisco."},
+            {t:"10:30 a.m.", d:"Misa memoria: Florisa Payano Ángeles y Vidal Sanabria."},
+            {t:"11:00 a.m.", d:"Solemne Misa Central Virgen de la Candelaria."},
+            {t:"11:30 a.m.", d:"Procesión por las calles principales."},
+            {t:"01:00 p.m.", d:"Palabras de bienvenida (Pta. Carolina Orellana)."},
+            {t:"02:00 p.m.", d:"Presentación mayordomos 2026 (Mulisa)."},
+            {t:"02:30 p.m.", d:"Presentación característica de la Orquesta."},
+            {t:"03:00 p.m.", d:"Danza de la pascua."},
+            {t:"04:00 p.m.", d:"Gran almuerzo general."},
+            {t:"05:00 p.m.", d:"Baile costumbrista con sonajeros."}
+        ] 
+      },
+      { 
+        day: "03 Feb", 
+        date: "Martes", 
+        events: [
+            {t:"06:00 a.m.", d:"Salva de 21 camaretazos (2do día)."},
+            {t:"09:00 a.m.", d:"Desayuno general."},
+            {t:"10:00 a.m.", d:"Recojo de mayoralas."},
+            {t:"12:00 m.", d:"Baile de la pascua encabezado por el pastor (Compás peculiar)."},
+            {t:"04:00 p.m.", d:"Almuerzo de la 1ra Cuadrilla de Mayoralas."},
+            {t:"05:00 p.m.", d:"Baile de pascua y zapateo con sonajeros."}
+        ] 
+      },
+      { 
+        day: "04 Feb", 
+        date: "Miércoles", 
+        events: [
+            {t:"06:00 a.m.", d:"Salva de 21 camaretazos."},
+            {t:"09:00 a.m.", d:"Desayuno de mayordomos."},
+            {t:"10:00 a.m.", d:"Concentración de mayoralas en la Iglesia."},
+            {t:"10:30 a.m.", d:"Partida a loza Muchca para concurso."},
+            {t:"11:00 a.m.", d:"Presentación y baile de la Orquesta."},
+            {t:"11:30 a.m.", d:"Gran concurso de danza y zapateo (mejor vestimenta y shukuy)."},
+            {t:"01:00 p.m.", d:"Baile general variado."},
+            {t:"04:00 p.m.", d:"Almuerzo de la 2da Cuadrilla de Mayoralas."},
+            {t:"06:00 p.m.", d:"Continuación del baile y zapateo."}
+        ] 
+      },
+      { 
+        day: "05 Feb", 
+        date: "Jueves", 
+        events: [
+            {t:"06:00 a.m.", d:"Salva de 21 camaretazos de saludo."},
+            {t:"08:00 a.m.", d:"Gran desayuno general."},
+            {t:"10:00 a.m.", d:"Concentración para romería."},
+            {t:"11:00 a.m.", d:"Romería en camposanto de Tyulltyuta."},
+            {t:"12:30 m.", d:"Baile general en loza deportiva."},
+            {t:"01:00 p.m.", d:"Cargada y plantado del Wachiwalito (árbol)."},
+            {t:"04:00 p.m.", d:"Gran almuerzo ofrecido por Mayordomos 2026."},
+            {t:"06:00 p.m.", d:"Baile general con mayoralas (wallmichuñas)."},
+            {t:"07:00 p.m.", d:"Inscripción nuevos mayordomos."},
+            {t:"08:00 p.m.", d:"Premiación (bailarinas, vestimentas, sonajeros)."},
+            {t:"09:00 p.m.", d:"Proclamación Mayordomos 2027."},
+            {t:"11:00 p.m.", d:"Cortamonte hasta las últimas consecuencias."}
+        ] 
+      },
+      { 
+        day: "06 Feb", 
+        date: "Viernes", 
+        events: [
+            {t:"06:00 a.m.", d:"Gran despedida a la Orquesta. Colocación de la 'Wallqa' (Collar) por las mayoralas."}
+        ] 
+      }
     ];
 
-    const mds = [ "Tomás Orellana y Carolina Vicente", "Pilar Angeles, Esposa y Nieto Edson C.", "Eugenia Lermo y América Negrón", "Herder payano Angeles e hijos", "Angel Luyo Flores esposa e hijos", "Teófila Angeles y Daniel Quino", "Richard Payano Esposa e hijo", "Yenner Payano esposa e hija", "Abel Granda esposa e hijas", "Sonia y Santa Manrique", "Arnaldo Melgarejo e hijas", "Gino Fernando Vilcapuma", "Cecilia Atanacio Valerio", "Adhemir Payano y familia", "Ilda Pérez y familia", "Anastacio Melgarejo e hijos", "Moises Payano esposa e hijos", "Jhon Jiny Sanabria e hijo", "Benito Laura esposa e hijos", "Wilson Sanabria y Thalia", "Lily Sanabria y familia", "Eduardo Orellana y familia", "Landys Casas y familia", "Charles Payano y Talia", "Noemí Payano y Antony Manrique", "Dany Vilca Negrón e hijas", "Jesús Angeles y familia", "Napoleón Iturrizaga", "Magda Melgarejo Sanabria", "Nolverto Iturrizaga Casas", "Leonor Payano y familia", "Nicolas Payano y familia" ];
+    const mds = [ 
+        "Tomás Orellana y Carolina Vicente y Hermanos", 
+        "Pilar Angeles, Esposa y Nieto Edson C.", 
+        "Eugenia Lermo e hija América Negrón", 
+        "Herder Payano Angeles e hijos", 
+        "Angel Luyo Flores esposa e hijos", 
+        "Teófila Angeles Payano e hijo Daniel Quino", 
+        "Richard Payano Esposa e hijo", 
+        "Yenner Payano esposa e hija", 
+        "Abel Granda esposa e hijas", 
+        "Sonia y Santa Manrique, esposo e hijas", 
+        "Arnaldo Melgarejo e hijas", 
+        "Gino Fernando Vilcapuma y esposa", 
+        "Cecilia Atanacio Valerio e hijos", 
+        "Adhemir Payano esposa e hijos", 
+        "Ilda Pérez esposo e hijos", 
+        "Anastacio Melgarejo e hijos", 
+        "Moises Payano esposa e hijos", 
+        "Jhon Jimy Sanabria e hijo", 
+        "Benito Laura esposa e hijos", 
+        "Wilson Sanabria esposa e hija Thalia", 
+        "Lily Sanabria esposo e hija Dayana", 
+        "Eduardo Orellana esposa e hijos", 
+        "Landys Casas esposo e hijos", 
+        "Charles Payano y sobrina Talia", 
+        "Noemí Payano y Antony Manrique", 
+        "Dany Vilca Negrón e hijas", 
+        "Jesús Angeles esposa e hijos", 
+        "Napoleón Iturrizaga esposa e hijos", 
+        "Magda Melgarejo Sanabria e hijos", 
+        "Nolverto Iturrizaga Casas y familia", 
+        "Leonor Payano esposo e hijos", 
+        "Nicolas Payano esposa e hijas" 
+    ];
 
-    const mls = [ "Leyssie Orellana", "Cleofina Angeles Cuevas", "Camila Andrea Quispe Payano", "Ariana Sofia Sanabria", "Kiran Bardales Diaz", "Dayana Payano Sanabria", "Flavia Sofia Sulca", "Kendra Remigio Cuevas", "Adriana Angeles Melgarejo", "Rosmery Remigio Blaz", "Janeth Melgarejo Silvestre", "Joselin Guadalupe Melgarejo", "Lucy Melgarejo Sanabria", "Andrea Sanabria Ramirez", "Martina Sanabria Ramirez", "Clariza Sanabria Antonio", "Mabel Bruno Sanabria", "Rocio Vivas Sanabria", "Luciana Aval Vivas", "Médaly Huamán Payano", "Malú Huamán Payano", "Santa Sanabria Angeles", "Hermelinda Acevedo Angeles", "Yeny Sanabria Angeles", "Yovana Huaman Acevedo", "Bernardina Huamán Acevedo", "Yéssica Huaman Acevedo", "Karina Casanova Guadalupe", "Yeny Abarca Guadalupe", "Amalia Sanabria Payano", "Marilin Sanabria Payano", "Ruth Angeles Castro", "Danzita Manrique Melgarejo", "Ana Rosa Manrique Erasmo", "Arida Huamán Valerio", "Cecilia Huamán Valerio", "Harumi Payano Flores", "Kahory Payano Flores", "Karito Evangelista Orellana", "Erica Manrique Melgarejo", "Genoveva Huamán Melgarejo", "Yadira Ordoñez Sanabria", "Yovana Payano Castillo", "Inés Valerio Payano", "Maritza Sanabria Payano", "Rosa Atanacio Sanabria", "Nadia Atanacio Sanabria", "Judith Atanacio Sanabria", "Mariela Manrique Erasmo", "Margot Manrique Vega", "Nelia Acevedo Angeles", "Mayly Acevedo Manrique", "Abilia Payano Angeles", "Cristina Payano Negrón", "Miley Payano Negrón", "Eslim Payano Negrón", "Claudia Adriana Manrique", "Yimil Castro Ramírez", "Camila Sanabria Ramírez", "Teodolinda Iturrizaga", "Kely Mateo De La Cruz", "Roxana Sanabria Antonio", "Liliana Mateo De La Cruz", "Nayely Sanabria Arenas", "Nayeli Angeles Manrique", "Obdulia Iturrizaga Sanabria", "Cintia Manrique Melgarejo", "Sandra Manrique Melgarejo", "Sahory Bautista Payano", "Santa Isabel Sanabria Gamarra", "Escarllet Condori Mateo", "Consuelo Huamán Casanova" ];
+    const mls = [ 
+        "Betty Blas Payano", "Ingelia Silvestre Abad", "Maritza Guadalupe Melgarejo", "Domitilia Sanabria Payano", "Doris Ramirez Acevedo", "Fabiana Antonio Luciani", "Gladys Payano Angeles", "Gloria Payano Angeles", "Diana Sanabria Payano", "Elodina Acevedo Angeles", "Mercedes Guadalupe Payano", "Luz Aurora Guadalupe Payano", "Reyna Ochoa de Payano", "Edita Valerio de Huamán", "Melchora Payano Manrique", "Delia Melgarejo Payano", "Livia Payano Angeles", "Hermelinda Acevedo Angeles", "María Payano Erasmo", "Raynalda Payano Ramírez", "Gladys Sanabria Payano", "Santa Angeles Payano", "Maximina Payano Ramirez", "Nelly Belleza Castro", "Delfina Sanabria Payano", "Ricardina Cuevas Guadalupe", 
+        "Leyssie Orellana", "Cleofina Angeles Cuevas", "Camila Andrea Quispe Payano", "Ariana Sofia Sanabria", "Kiran Bardales Diaz", "Dayana Payano Sanabria", "Flavia Sofia Sulca", "Kendra Remigio Cuevas", "Adriana Angeles Melgarejo", "Rosmery Remigio Blaz", "Sabina Remigio Blaz", "Janeth Melgarejo Silvestre", "Joselin Guadalupe Melgarejo", "Lucy Melgarejo Sanabria", "Andrea Sanabria Ramirez", "Martina Sanabria Ramirez", "Clariza Sanabria Antonio", "Mabel Bruno Sanabria", "Rocio Vivas Sanabria", "Luciana Aval Vivas", "Médaly Huamán Payano", "Malú Huamán Payano", "Mayury Huamán Payano", "Santa Sanabria Angeles", "Yeny Sanabria Angeles", "Yovana Huaman Acevedo", "Bernardina Huamán Acevedo", "Yéssica Huaman Acevedo", "Karina Casanova Guadalupe", "Yeny Abarca Guadalupe", "Amalia Sanabria Payano", "Marilin Sanabria Payano", "Ruth Angeles Castro", "Danitza Manrique Melgarejo", "Ana Rosa Manrique Erasmo", "Arida Huamán Valerio", "Cecilia Huamán Valerio", "Mirtha Castro Sanabria", "Mirsa Guadalupe Payano", "Emira Acevedo Sanabria", "Soraida Melgarejo Silvestre", "Mariluisa Melgarejo Sanabria", "Lucinda Melgarejo Silvestre", "Yolanda Eulalia Huamán Erasmo", "Nieves Payano Iturrizaga", "Rosa Mauricio Huamlazo", "Edith Ramírez Payano", "Mónica Sanabria Acevedo", "Alicia Ramírez Payano", "Elizabeth Payano Angeles", "Genoveva Huamán Melgarejo", "Antonela Ortega Melgarejo", "Flor Atúncar de Angeles", "Yumix Erica Payano Erasmo", "Yoni Acevedo", "Harumi Payano Flores", "Kahory Payano Flores", "Karito Evangelista Orellana", "Erica Manrique Melgarejo", "Yadira Ordoñez Sanabria", "Yovana Payano Castillo", "Inés Valerio Payano", "Maritza Sanabria Payano", "Rosa Atanacio Sanabria", "Nadia Atanacio Sanabria", "Judith Atanacio Sanabria", "Mariela Manrique Erasmo", "Margot Manrique Vega", "Nelia Acevedo Angeles", "Mayly Acevedo Manrique", "Abilia Payano Angeles", "Cristina Payano Negrón", "Miley Payano Negrón", "Eslim Payano Negrón", "Claudia Adriana Manrique", "Yimil Castro Ramírez", "Camila Sanabria Ramírez", "Teodolinda Iturrizaga", "Kely Mateo De la Cruz", "Roxana Sanabria Antonio", "Liliana Mateo De La Cruz", "Nayely Sanabria Arenas", "Nayeli Angeles Manrique", "Obdulia Iturrizaga Sanabria", "Cintia Manrique Melgarejo", "Sandra Manrique Melgarejo", "Sahory Bautista Payano", "Santa Isabel Sanabria Gamarra", "Escarlet Condori Mateo", "Consuelo Huamán Casanova"
+    ];
 
-    // CORREGIDO: Montos exactos y "Sorpresa"
     const prizes = [
-      { cat: "Adultos", p1: "S/. 150", p2: "S/. 100", p3: "Sorpresa", s: "Sorpresa" },
-      { cat: "Señoritas", p1: "S/. 300", p2: "S/. 150", p3: "Sorpresa", s: "Sorpresa" },
-      { cat: "Niñas", p1: "S/. 100", p2: "S/. 30", p3: "Sorpresa", s: "Sorpresa" },
-      { cat: "Sonajeros A.", p1: "S/. 150", p2: "S/. 100", p3: "Sorpresa", s: "Sorpresa" },
-      { cat: "Sonajeros N.", p1: "S/. 100", p2: "S/. 50", p3: "Sorpresa", s: "Sorpresa" }
+      { cat: "Adultos", p1: "S/. 150.00", p2: "S/. 100.00", p3: "Sorpresa", s: "Sorpresa" },
+      { cat: "Señoritas", p1: "S/. 300.00", p2: "S/. 150.00", p3: "Sorpresa", s: "Sorpresa" },
+      { cat: "Niñas", p1: "S/. 100.00", p2: "S/. 30.00", p3: "Sorpresa", s: "Sorpresa" },
+      { cat: "Sonajeros Adultos", p1: "S/. 150.00", p2: "S/. 100.00", p3: "Sorpresa", s: "Sorpresa" },
+      { cat: "Sonajeros Niños", p1: "S/. 100.00", p2: "S/. 50.00", p3: "Sorpresa", s: "Sorpresa" }
     ];
 
-    // CORREGIDO: Lista completa de donantes del texto
     const donors = {
       cash: [ 
-        {n:"Román Sanabria Payano", a:"50.00 soles"}, 
-        {n:"Luisa Diaz Payano", a:"50.00 soles"}, 
-        {n:"Niño Scarleth Condori", a:"100.00 soles"}, 
-        {n:"Jaime Belleza Sanabria", a:"100.00 soles"}, 
-        {n:"Arlindo Belleza Castro", a:"50.00 soles (Pastor)"}, 
-        {n:"Flavia Sofía Sulca M.", a:"50.00 soles"},
-        {n:"Rolando Nelson Huamán C.", a:"50.00 soles"},
-        {n:"William Edison Huamán C.", a:"50.00 soles"},
-        {n:"Filomena Placida Casanova", a:"50.00 soles"},
-        {n:"Flor Atúncar de Angeles", a:"50.00 soles (Pastor Niño)"}, 
-        {n:"Flor Atúncar de Angeles", a:"100.00 soles (Comunera)"},
-        {n:"Franklin Angeles Espinoza", a:"100.00 soles"},
-        {n:"Joven Huamán Contreras C.", a:"100.00 soles"},
-        {n:"José Luis Hernández L.", a:"100.00 soles"},
-        {n:"Jorge Olivos Melgarejo", a:"50.00 soles"},
+        {n:"Román Sanabria Payano", a:"50.00"}, 
+        {n:"Luisa Diaz Payano", a:"50.00"}, 
+        {n:"Niño Scarleth Condori Mateo", a:"100.00"}, 
+        {n:"Jaime Belleza Sanabria", a:"100.00"}, 
+        {n:"Arlindo Belleza Castro", a:"50.00 (Pastor)"}, 
+        {n:"Flavia Sofia Sulca Melgarejo", a:"50.00"},
+        {n:"Rolando Nelson Huamán C.", a:"50.00"},
+        {n:"William Edison Huamán C.", a:"50.00"},
+        {n:"Filomena Placida Casanova", a:"50.00"},
+        {n:"Flor Atúncar de Angeles", a:"50.00 (Pastor Niño)"}, 
+        {n:"Flor Atúncar de Angeles", a:"100.00 (Comunera)"},
+        {n:"Franklin Angeles Espinoza", a:"100.00 (Mejor Pastor)"},
+        {n:"Joven Jhamir Conteras C.", a:"100.00 (Mejor Bailarina)"},
+        {n:"José Luis Hernández L.", a:"100.00 (Adulto Mayor)"},
+        {n:"Jorge Olivos Melgarejo", a:"50.00"},
         {n:"Juan Hipólito A.", a:"Sorpresa"},
         {n:"El Dulce Apurino", a:"Sorpresa"},
         {n:"El Amor V. Y.", a:"Sorpresa"},
+        {n:"Familia Huamanlazo Sandoval", a:"5 Doc. Utensilios"},
         {n:"Comercial Paola e Hijas", a:"Sorpresa"},
-        {n:"Edgar Vivas Lermo", a:"100.00 soles"},
-        {n:"Jhamir Contreras", a:"100.00 soles"},
-        {n:"Jhon Sanabria Suárez", a:"100.00 soles (vestimenta)"},
-        {n:"Luis Fernando Casas y esposa", a:"100.00 soles"}
+        {n:"Edgar Vivas Lermo", a:"S/. 100.00"},
+        {n:"Miler Acevedo", a:"1 Caja Cerveza"},
+        {n:"Partido Somos Perú", a:"S/. 400.00"},
+        {n:"Jhon Sanabria Suárez", a:"S/. 100.00"},
+        {n:"Luis Fernando Casas y Esposa", a:"S/. 100.00"}
       ],
-      kind: ["Misa Central Virgen Candelaria", "+ 1 Capa para la Virgen", "2 Sacos de Arroz (50kg)", "1 Costal de Papas (100kg)", "3 Paquetes de Fideos", "3 Cajas de Cerveza Orquesta (Miler Acevedo)", "Familia Huamánlazo Sandoval (5 Doc. Utensilios)", "Arreglos Florales", "Almuerzo para el Público", "Donación del Programa"]
+      kind: [
+          "Misa Central + 1 Capa para la Virgen Pequeña (En memoria de Florisa Payano y Vidal Sanabria)", 
+          "Vero Payano Ramírez: 1 Saco de Arroz (50 Kg)", 
+          "Over Payano y Esposa: 1 Saco de Arroz (50 Kg)", 
+          "Jimy Guadalupe Payano: 1 Costal de Papas (100 kg)", 
+          "Liliana Atanacio Angeles: 1 Paquete de fideo",
+          "Teodolinda Iturrizaga Sanabria: 1 Paquete de fideo",
+          "Maritza Guadalupe Melgarejo: 1 Paquete de fideo",
+          "María Espinoza de Angeles: 1 Caja de Cerveza",
+          "Gladys Sanabria Acevedo: 1 Paquete de Fideo",
+          "Wilington Atanacio Angeles: 2 Docenas de Cohetes",
+          "Genoveva Huamán Melgarejo: 2 Docenas de Cohetes",
+          "Yenner Payano Iturrizaga: 1 Paquete de Cohetes 4 tiempos",
+          "Abel Belleza y esposa: Arreglo Floral",
+          "Michel Acevedo Sanabria: Cerveza para la Orquesta",
+          "Maritza Sanabria Payano: 1 Caja de Cerveza",
+          "Lian Silvestre Payano: 1 paquete de Fideos",
+          "Familia Orellana Vicente: Almuerzo Público/Orquesta"
+      ]
     };
 
     const gallery = [
@@ -358,78 +561,89 @@
     function render() {
       // Agenda
       const pWrap = document.getElementById('programWrap');
-      program.forEach(p => {
-        pWrap.innerHTML += `
-          <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 hover:shadow-xl transition-all reveal" data-reveal>
-            <div class="flex flex-col md:flex-row gap-10">
-              <div class="md:w-40 shrink-0">
-                <span class="text-luxe-wine font-serif text-3xl italic block">${p.day}</span>
-                <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-luxe-gold">${p.date}</span>
-              </div>
-              <div class="flex-1 space-y-4">
-                ${p.events.map(e => `
-                  <div class="flex justify-between items-start gap-6 border-b border-slate-50 pb-3 group">
-                    <span class="text-[10px] font-bold text-luxe-navy uppercase tracking-widest pt-1 shrink-0">${e.t}</span>
-                    <span class="text-sm text-slate-500 text-right group-hover:text-luxe-navy transition-colors">${e.d}</span>
+      if(pWrap) {
+          program.forEach(p => {
+            pWrap.innerHTML += `
+              <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 hover:shadow-xl transition-all reveal" data-reveal>
+                <div class="flex flex-col md:flex-row gap-10">
+                  <div class="md:w-40 shrink-0">
+                    <span class="text-luxe-wine font-serif text-3xl italic block">${p.day}</span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-luxe-gold">${p.date}</span>
                   </div>
-                `).join('')}
+                  <div class="flex-1 space-y-4">
+                    ${p.events.map(e => `
+                      <div class="flex justify-between items-start gap-6 border-b border-slate-50 pb-3 group">
+                        <span class="text-[10px] font-bold text-luxe-navy uppercase tracking-widest pt-1 shrink-0">${e.t}</span>
+                        <span class="text-sm text-slate-500 text-right group-hover:text-luxe-navy transition-colors">${e.d}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        `;
-      });
+            `;
+          });
+      }
 
       // Comitiva
-      document.getElementById('m-count').innerText = mds.length + ' Integrantes';
-      document.getElementById('ml-count').innerText = mls.length + ' Integrantes';
-      mds.forEach(m => document.getElementById('m-list').innerHTML += `<p class="py-1 border-b border-white/10">• ${m}</p>`);
-      mls.forEach(m => document.getElementById('ml-list').innerHTML += `<p class="py-1 border-b border-white/5">• ${m}</p>`);
+      if(document.getElementById('m-count')) document.getElementById('m-count').innerText = mds.length + ' Integrantes';
+      if(document.getElementById('ml-count')) document.getElementById('ml-count').innerText = mls.length + ' Integrantes';
+      if(document.getElementById('m-list')) mds.forEach(m => document.getElementById('m-list').innerHTML += `<p class="py-1 border-b border-white/10">• ${m}</p>`);
+      if(document.getElementById('ml-list')) mls.forEach(m => document.getElementById('ml-list').innerHTML += `<p class="py-1 border-b border-white/5">• ${m}</p>`);
 
       // Premios
       const pzWrap = document.getElementById('prizesWrap');
-      prizes.forEach(pz => {
-          pzWrap.innerHTML += `
-            <div class="bg-white p-8 rounded-3xl border border-slate-100 text-center shadow-sm hover:shadow-lg transition-shadow">
-                <h5 class="font-serif text-xl mb-4 italic text-luxe-wine">${pz.cat}</h5>
-                <div class="space-y-2 text-[11px]">
-                    <p class="flex justify-between"><span>1er Puesto</span><span class="font-bold text-luxe-gold">${pz.p1}</span></p>
-                    <p class="flex justify-between"><span>2do Puesto</span><span>${pz.p2}</span></p>
-                    <p class="flex justify-between border-t pt-2 mt-2"><span>3er Puesto</span><span class="font-bold text-luxe-wine italic">${pz.p3}</span></p>
+      if(pzWrap) {
+          prizes.forEach(pz => {
+              pzWrap.innerHTML += `
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 text-center shadow-sm hover:shadow-lg transition-shadow">
+                    <h5 class="font-serif text-xl mb-4 italic text-luxe-wine">${pz.cat}</h5>
+                    <div class="space-y-2 text-[11px]">
+                        <p class="flex justify-between"><span>1er Puesto</span><span class="font-bold text-luxe-gold">${pz.p1}</span></p>
+                        <p class="flex justify-between"><span>2do Puesto</span><span>${pz.p2}</span></p>
+                        <p class="flex justify-between border-t pt-2 mt-2"><span>3er Puesto</span><span class="font-bold text-luxe-wine italic">${pz.p3}</span></p>
+                    </div>
                 </div>
-            </div>
-          `;
-      });
+              `;
+          });
+      }
 
       // Donantes
-      donors.cash.forEach(c => {
-        document.getElementById('donors-cash').innerHTML += `
-          <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
-            <span class="text-slate-600">${c.n}</span>
-            <span class="font-bold text-luxe-gold text-xs whitespace-nowrap ml-4">${c.a}</span>
-          </div>
-        `;
-      });
-      donors.kind.forEach(k => document.getElementById('donors-kind').innerHTML += `<p class="py-1 border-b border-white/5">• ${k}</p>`);
+      const cashWrap = document.getElementById('donors-cash');
+      if(cashWrap) {
+          donors.cash.forEach(c => {
+            cashWrap.innerHTML += `
+              <div class="flex justify-between items-center text-sm border-b border-white/5 pb-2">
+                <span class="text-slate-600">${c.n}</span>
+                <span class="font-bold text-luxe-gold text-xs whitespace-nowrap ml-4">${c.a}</span>
+              </div>
+            `;
+          });
+      }
+      const kindWrap = document.getElementById('donors-kind');
+      if(kindWrap) donors.kind.forEach(k => kindWrap.innerHTML += `<p class="py-1 border-b border-white/5">• ${k}</p>`);
 
-      // Galeria (Detección Video)
+      // Galeria
       const gWrap = document.getElementById('galleryWrap');
-      gallery.forEach(g => {
-        const isVideo = g.src.endsWith('.mp4');
-        gWrap.innerHTML += `
-          <div class="group relative rounded-[2rem] overflow-hidden bg-luxe-navy h-80 reveal" data-reveal>
-            ${isVideo 
-              ? `<video src="${g.src}" class="w-full h-full object-cover" autoplay muted loop playsinline></video>`
-              : `<img src="${g.src}" alt="${g.caption}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">`
-            }
-            <div class="absolute inset-0 bg-gradient-to-t from-luxe-navy via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-90"></div>
-            <div class="absolute bottom-8 left-8 right-8">
-              <p class="text-white font-serif italic text-2xl">${g.caption}</p>
-              <div class="w-8 h-[1px] bg-luxe-gold mt-2 transition-all group-hover:w-20"></div>
-            </div>
-          </div>
-        `;
-      });
+      if(gWrap) {
+          gallery.forEach(g => {
+            const isVideo = g.src.endsWith('.mp4');
+            gWrap.innerHTML += `
+              <div class="group relative rounded-[2rem] overflow-hidden bg-luxe-navy h-80 reveal" data-reveal>
+                ${isVideo 
+                  ? `<video src="${g.src}" class="w-full h-full object-cover" autoplay muted loop playsinline></video>`
+                  : `<img src="${g.src}" alt="${g.caption}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" onerror="this.style.display='none'">`
+                }
+                <div class="absolute inset-0 bg-gradient-to-t from-luxe-navy via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-90"></div>
+                <div class="absolute bottom-8 left-8 right-8">
+                  <p class="text-white font-serif italic text-2xl">${g.caption}</p>
+                  <div class="w-8 h-[1px] bg-luxe-gold mt-2 transition-all group-hover:w-20"></div>
+                </div>
+              </div>
+            `;
+          });
+      }
       
+      document.body.classList.add('js-loaded');
       handleReveal();
     }
 
