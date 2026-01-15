@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festividad Virgen de la Candelaria - Aiza 2026 • Editorial Clean</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            --bg: #f8fafc;
+            /* slate-50 */
+            --card: #ffffff;
+            --ink: #0b1220;
+            /* deep navy */
+            --muted: #475569;
+            /* slate-600 */
+            --stroke: rgba(2, 6, 23, .08);
+            --accent: #4f46e5;
+            /* indigo-600 */
+            --accent2: #0ea5e9;
+            /* sky-500 */
+            --soft: rgba(79, 70, 229, .10);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+        }
+
+        /* Editorial feel */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--stroke);
+            border-radius: 1.25rem;
+        }
+
+        .shadow-soft {
+            box-shadow: 0 18px 50px rgba(2, 6, 23, .08);
+        }
+
+        .ring-soft {
+            box-shadow: inset 0 0 0 1px rgba(2, 6, 23, .06);
+        }
+
+        /* Hero pattern */
+        .hero-bg {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(79, 70, 229, .18), transparent 45%),
+                radial-gradient(circle at 80% 10%, rgba(14, 165, 233, .14), transparent 50%),
+                radial-gradient(circle at 65% 85%, rgba(2, 132, 199, .10), transparent 50%),
+                linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #f1f5f9 100%);
+        }
+
+        .grid-dots {
+            background-image: radial-gradient(rgba(2, 6, 23, .10) 1px, transparent 1px);
+            background-size: 22px 22px;
+        }
+
+        /* Reveal */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(12px);
+            transition: .7s ease;
+        }
+
+        [data-reveal].reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(2, 6, 23, .22);
+            border-radius: 999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(2, 6, 23, .32);
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans">
+
+    <!-- Top progress bar -->
+    <div id="progress" class="fixed top-0 left-0 h-[3px] bg-indigo-600 z-[60]" style="width:0%"></div>
+
+    <!-- NAV -->
+    <nav class="fixed top-0 left-0 right-0 z-50">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="mt-4 card shadow-soft">
+                <div class="flex items-center justify-between px-4 py-3">
+                    <a href="#inicio" class="flex items-center gap-3">
+                        <div
+                            class="h-10 w-10 rounded-xl bg-gradient-to-br from-indigo-600 to-sky-500 text-white flex items-center justify-center shadow">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2l3 6 7 .9-5 4.8 1.3 7.1L12 17.9 5.7 20.8 7 13.7 2 8.9 9 8z" stroke="white"
+                                    stroke-width="1.6" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="text-sm font-semibold tracking-tight text-slate-900">Candelaria Aiza 2026</p>
+                            <p class="text-xs text-slate-600">Editorial Clean • One Page</p>
+                        </div>
+                    </a>
+
+                    <!-- Desktop links -->
+                    <div class="hidden md:flex items-center gap-2">
+                        <a class="navlink px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#invitacion">Invitación</a>
+                        <a class="navlink px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#programa">Programa</a>
+                        <a class="navlink px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#premios">Premios</a>
+                        <a class="navlink px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#mayordomia">Mayordomía</a>
+                        <a class="navlink px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#donaciones">Donaciones</a>
+                        <a class="navlink px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#galeria">Galería</a>
+                        <a class="navlink px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#contacto">Info</a>
+
+                        <a href="#programa"
+                            class="ml-1 inline-flex items-center gap-2 rounded-xl bg-indigo-600 text-white px-4 py-2 text-sm font-semibold hover:bg-indigo-700 transition">
+                            Ver agenda
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 18l6-6-6-6" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Mobile button -->
+                    <button id="menuBtn"
+                        class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl hover:bg-slate-50 transition ring-soft"
+                        aria-label="Abrir menú">
+                        <svg id="menuIcon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 7h16M4 12h16M4 17h16" stroke="#0f172a" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile menu -->
+                <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 px-3 py-3">
+                    <div class="grid grid-cols-2 gap-2">
+                        <a data-nav
+                            class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#invitacion">Invitación</a>
+                        <a data-nav
+                            class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#programa">Programa</a>
+                        <a data-nav
+                            class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#premios">Premios</a>
+                        <a data-nav
+                            class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#mayordomia">Mayordomía</a>
+                        <a data-nav
+                            class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#donaciones">Donaciones</a>
+                        <a data-nav
+                            class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#galeria">Galería</a>
+                        <a data-nav
+                            class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 transition"
+                            href="#contacto">Info</a>
+                    </div>
+
+                    <a data-nav href="#programa"
+                        class="mt-3 flex items-center justify-center gap-2 rounded-xl bg-indigo-600 text-white px-4 py-2 text-sm font-semibold hover:bg-indigo-700 transition">
+                        Ver agenda completa
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18l6-6-6-6" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="inicio" class="pt-28">
+        <div class="relative overflow-hidden hero-bg">
+            <div class="absolute inset-0 grid-dots opacity-[.18]"></div>
+
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-7">
+                        <div
+                            class="inline-flex items-center gap-2 rounded-full bg-indigo-50 text-indigo-700 px-4 py-2 border border-indigo-100">
+                            <span class="h-2 w-2 rounded-full bg-indigo-600"></span>
+                            <span class="text-sm font-semibold">Festividad Religiosa • Aiza • 2026</span>
+                        </div>
+
+                        <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900">
+                            Festividad en Honor a la <span class="text-indigo-700">Santísima Virgen</span><br
+                                class="hidden sm:block">
+                            de la <span class="text-slate-900">Candelaria</span>
+                        </h1>
+
+                        <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl">
+                            Pueblo de Aiza, Distrito de Tupe, Provincia de Yauyos, Departamento de Lima.
+                        </p>
+
+                        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div class="card shadow-soft p-5">
+                                <p class="text-xs text-slate-500">Fechas</p>
+                                <p class="mt-1 font-semibold text-slate-900">01 al 05 de Febrero • 2026</p>
+                            </div>
+                            <div class="card shadow-soft p-5">
+                                <p class="text-xs text-slate-500">Organiza</p>
+                                <p class="mt-1 font-semibold text-slate-900">Mayordomos 3ra y 4ta Cuadrilla</p>
+                            </div>
+                            <div class="card shadow-soft p-5">
+                                <p class="text-xs text-slate-500">Orquesta</p>
+                                <p class="mt-1 font-semibold text-slate-900">Legendarios Guapos Internacionales</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 flex flex-col sm:flex-row gap-3">
+                            <a href="#programa"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 text-white px-5 py-3 font-semibold hover:bg-indigo-700 transition">
+                                Explorar programa
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 18l6-6-6-6" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </a>
+
+                            <a href="#donaciones"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-slate-900 px-5 py-3 font-semibold border border-slate-200 hover:bg-slate-50 transition">
+                                Ver donaciones
+                            </a>
+                        </div>
+
+                        <p class="mt-6 text-sm text-slate-500">
+                            Director: Carlos Contreras Alvarez (El Popular “Gato de Huancayo”).
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="card shadow-soft p-5">
+                            <div class="rounded-2xl overflow-hidden border border-slate-200">
+                                <img src="https://placehold.co/900x1100/0b1220/ffffff?text=Virgen+de+la+Candelaria"
+                                    alt="Virgen de la Candelaria" class="w-full h-auto" />
+                            </div>
+
+                            <div class="mt-4 grid grid-cols-2 gap-3">
+                                <div class="rounded-2xl bg-indigo-50 border border-indigo-100 p-4">
+                                    <p class="text-xs text-slate-500">Tradición</p>
+                                    <p class="font-semibold text-slate-900">Identidad cultural</p>
+                                </div>
+                                <div class="rounded-2xl bg-sky-50 border border-sky-100 p-4">
+                                    <p class="text-xs text-slate-500">Comunidad</p>
+                                    <p class="font-semibold text-slate-900">“Pequeña Suiza”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick chips -->
+                <div class="mt-12 flex flex-wrap gap-2">
+                    <a class="px-4 py-2 rounded-full text-sm font-semibold bg-white border border-slate-200 hover:bg-slate-50 transition"
+                        href="#invitacion">Invitación</a>
+                    <a class="px-4 py-2 rounded-full text-sm font-semibold bg-white border border-slate-200 hover:bg-slate-50 transition"
+                        href="#programa">Programa</a>
+                    <a class="px-4 py-2 rounded-full text-sm font-semibold bg-white border border-slate-200 hover:bg-slate-50 transition"
+                        href="#premios">Premios</a>
+                    <a class="px-4 py-2 rounded-full text-sm font-semibold bg-white border border-slate-200 hover:bg-slate-50 transition"
+                        href="#mayordomia">Mayordomía</a>
+                    <a class="px-4 py-2 rounded-full text-sm font-semibold bg-white border border-slate-200 hover:bg-slate-50 transition"
+                        href="#galeria">Galería</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- INVITACIÓN -->
+    <section id="invitacion" class="py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7" data-reveal>
+                    <div
+                        class="inline-flex items-center gap-2 rounded-full bg-indigo-50 text-indigo-700 px-4 py-2 border border-indigo-100">
+                        <span class="h-2 w-2 rounded-full bg-indigo-600"></span>
+                        <span class="text-sm font-semibold">Invitación oficial</span>
+                    </div>
+
+                    <h2 class="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+                        Invitación de Honor
+                    </h2>
+
+                    <p class="mt-4 text-slate-600 leading-relaxed">
+                        Los Mayordomos de la Tercera y Cuarta Cuadrilla de la festividad Religiosa en honor a la
+                        Santísima Virgen de la Candelaria
+                        de la Comunidad Campesina de la Legua Jaqaru de Aiza, distrito de Tupe, Provincia de Yauyos,
+                        Región Lima,
+                        invitamos a Ud. y su digna familia y al público en general a la gran fiesta religiosa a
+                        realizarse los días
+                        <span class="font-semibold text-slate-900"> 1, 2, 3, 4 y 5 de Febrero del 2026</span>.
+                    </p>
+
+                    <p class="mt-4 text-slate-700 italic leading-relaxed">
+                        “Será muy grato contar con su presencia para extender los lazos de amistad, confraternidad,
+                        solidaridad e identidad cultural
+                        para fortalecer nuestra entrañable comunidad de Aiza llamada la <span
+                            class="font-semibold">Pequeña Suiza</span> orgullo de Yauyos y el Perú.”
+                    </p>
+
+                    <div class="mt-7 flex flex-wrap gap-3">
+                        <div class="card shadow-soft px-5 py-4">
+                            <p class="text-xs text-slate-500">Mensaje</p>
+                            <p class="font-semibold text-slate-900">¡Todos son bienvenidos!</p>
+                        </div>
+                        <div class="card shadow-soft px-5 py-4">
+                            <p class="text-xs text-slate-500">Lugar</p>
+                            <p class="font-semibold text-slate-900">Pueblo de Aiza</p>
+                        </div>
+                    </div>
+
+                    <a href="#programa"
+                        class="mt-7 inline-flex items-center gap-2 rounded-xl bg-indigo-600 text-white px-5 py-3 font-semibold hover:bg-indigo-700 transition">
+                        Ver el programa completo
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18l6-6-6-6" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-5" data-reveal>
+                    <div class="card shadow-soft overflow-hidden">
+                        <div class="p-6 bg-gradient-to-br from-indigo-600 to-sky-500 text-white">
+                            <p class="text-sm text-white/80">Festividad</p>
+                            <p class="text-xl font-bold">Virgen de la Candelaria</p>
+                            <p class="mt-2 text-white/80 text-sm">01 – 05 Feb 2026</p>
+                        </div>
+                        <div class="p-6">
+                            <div class="rounded-2xl overflow-hidden border border-slate-200">
+                                <img src="https://placehold.co/900x650/4f46e5/ffffff?text=Tradicion+y+Fe"
+                                    alt="Tradición y Fe" class="w-full h-auto" />
+                            </div>
+                            <ul class="mt-5 space-y-3 text-sm text-slate-600">
+                                <li class="flex gap-3">
+                                    <span class="mt-2 h-2 w-2 rounded-full bg-indigo-600"></span>
+                                    <span>Organización: Mayordomos Tercera y Cuarta Cuadrilla 2026.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
+                                    <span>Ameniza: Legendarios Guapos Internacionales.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="mt-2 h-2 w-2 rounded-full bg-slate-400"></span>
+                                    <span>Actividades: misas, procesión, concursos, pascua, zapateo y baile
+                                        general.</span>
+                                </li>
+                            </ul>
+
+                            <a href="#programa"
+                                class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 text-white px-5 py-3 font-semibold hover:bg-slate-800 transition">
+                                Ir a agenda
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMA -->
+    <section id="programa" class="py-16 sm:py-20 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4" data-reveal>
+                <div>
+                    <p class="text-sm font-semibold text-indigo-700">Agenda oficial</p>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">Programa General
+                    </h2>
+                    <p class="mt-2 text-slate-600 max-w-2xl">
+                        Desplegá cada día para ver el detalle (formato acordeón, limpio y legible).
+                    </p>
+                </div>
+
+                <div class="flex gap-2">
+                    <button id="expandAll"
+                        class="rounded-xl bg-slate-900 text-white px-4 py-2 text-sm font-semibold hover:bg-slate-800 transition">Expandir
+                        todo</button>
+                    <button id="collapseAll"
+                        class="rounded-xl bg-white border border-slate-200 px-4 py-2 text-sm font-semibold hover:bg-slate-50 transition">Contraer</button>
+                </div>
+            </div>
+
+            <div id="programWrap" class="mt-10 space-y-4" data-reveal></div>
+        </div>
+    </section>
+
+    <!-- PREMIOS -->
+    <section id="premios" class="py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-reveal>
+                <p class="text-sm font-semibold text-indigo-700">Competencia</p>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">Premios</h2>
+                <p class="mt-2 text-slate-600">Categorías y premios de la competencia de danza, vestimenta y sonajeros.
+                </p>
+            </div>
+
+            <div id="prizesWrap" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4" data-reveal></div>
+
+            <div class="mt-10 card shadow-soft p-8" data-reveal>
+                <h3 class="text-xl font-bold text-slate-900">Categorías de competencia</h3>
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                        <p class="font-semibold text-slate-900">Bailarinas</p>
+                        <p class="mt-1 text-sm text-slate-600">Competencia de baile tradicional con vestimenta típica.
+                        </p>
+                    </div>
+                    <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                        <p class="font-semibold text-slate-900">Mejor vestimenta</p>
+                        <p class="mt-1 text-sm text-slate-600">Evaluación de trajes tradicionales y elaboración
+                            artesanal.</p>
+                    </div>
+                    <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                        <p class="font-semibold text-slate-900">Sonajeros</p>
+                        <p class="mt-1 text-sm text-slate-600">Habilidades musicales con instrumentos tradicionales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAYORDOMÍA -->
+    <section id="mayordomia" class="py-16 sm:py-20 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-reveal>
+                <p class="text-sm font-semibold text-indigo-700">Organización</p>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">Mayordomos &
+                    Mayoralas 2026</h2>
+                <p class="mt-2 text-slate-600">Listado completo con lectura cómoda y estilo editorial.</p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="card shadow-soft p-7" data-reveal>
+                    <div class="flex items-center justify-between gap-3">
+                        <h3 class="text-xl font-bold text-slate-900">Mayordomos 2026</h3>
+                        <span id="mayordomosCount"
+                            class="text-xs font-semibold bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full border border-indigo-100"></span>
+                    </div>
+                    <div id="mayordomosWrap" class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2"></div>
+                </div>
+
+                <div class="card shadow-soft p-7" data-reveal>
+                    <div class="flex items-center justify-between gap-3">
+                        <h3 class="text-xl font-bold text-slate-900">Mayoralas 2026</h3>
+                        <span id="mayoralasCount"
+                            class="text-xs font-semibold bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full border border-indigo-100"></span>
+                    </div>
+                    <div id="mayoralasWrap" class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONACIONES -->
+    <section id="donaciones" class="py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-reveal>
+                <p class="text-sm font-semibold text-indigo-700">Agradecimiento</p>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">Donaciones</h2>
+                <p class="mt-2 text-slate-600">Registro de aportes en efectivo, especies y donación de programa.</p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="card shadow-soft p-7" data-reveal>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-slate-900">Donantes en efectivo</h3>
+                        <span id="cashCount"
+                            class="text-xs font-semibold bg-slate-100 text-slate-700 px-3 py-1 rounded-full"></span>
+                    </div>
+                    <div id="cashWrap" class="mt-5 space-y-3"></div>
+                </div>
+
+                <div class="card shadow-soft p-7" data-reveal>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-slate-900">Donantes en especies</h3>
+                        <span id="kindCount"
+                            class="text-xs font-semibold bg-slate-100 text-slate-700 px-3 py-1 rounded-full"></span>
+                    </div>
+                    <div id="kindWrap" class="mt-5 space-y-2"></div>
+                </div>
+            </div>
+
+            <div class="mt-6 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 text-white p-8 shadow-soft"
+                data-reveal>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div>
+                        <p class="text-sm text-white/75">Donación de programa</p>
+                        <p class="text-2xl font-bold">Partido Somos Perú - Ayza</p>
+                    </div>
+                    <div class="rounded-2xl bg-white/10 border border-white/10 px-6 py-4">
+                        <p class="text-sm text-white/75">Monto</p>
+                        <p class="text-xl font-semibold">S/. 400.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section id="galeria" class="py-16 sm:py-20 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center" data-reveal>
+                <p class="text-sm font-semibold text-indigo-700">Imágenes</p>
+                <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">Galería</h2>
+                <p class="mt-2 text-slate-600">Reemplazá los placeholders por fotos reales cuando las tengas.</p>
+            </div>
+
+            <div id="galleryWrap" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" data-reveal></div>
+
+            <div class="mt-10 text-center" data-reveal>
+                <div
+                    class="inline-flex items-center gap-2 rounded-full bg-indigo-50 text-indigo-800 px-6 py-3 border border-indigo-100">
+                    <span class="h-2 w-2 rounded-full bg-indigo-600"></span>
+                    <p class="font-semibold">¡Vive la tradición y la alegría de nuestra fiesta patronal!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="card shadow-soft overflow-hidden" data-reveal>
+                <div class="p-8 bg-gradient-to-r from-indigo-600 to-sky-500 text-white">
+                    <h2 class="text-3xl font-extrabold">Información general</h2>
+                    <p class="mt-2 text-white/80">Datos clave de la festividad para compartir y difundir.</p>
+                </div>
+
+                <div class="p-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="rounded-2xl bg-slate-50 border border-slate-200 p-6">
+                        <p class="text-xs text-slate-500">Ubicación</p>
+                        <p class="mt-1 font-semibold text-slate-900">Pueblo de Aiza, Tupe, Yauyos, Lima</p>
+                        <p class="mt-3 text-sm text-slate-600">Comunidad Campesina de la Legua Jaqaru de Aiza.</p>
+                    </div>
+                    <div class="rounded-2xl bg-slate-50 border border-slate-200 p-6">
+                        <p class="text-xs text-slate-500">Fechas</p>
+                        <p class="mt-1 font-semibold text-slate-900">01 al 05 de Febrero del 2026</p>
+                        <p class="mt-3 text-sm text-slate-600">Actividades religiosas, culturales y sociales.</p>
+                    </div>
+                    <div class="rounded-2xl bg-slate-50 border border-slate-200 p-6">
+                        <p class="text-xs text-slate-500">Orquesta</p>
+                        <p class="mt-1 font-semibold text-slate-900">Legendarios Guapos Internacionales</p>
+                        <p class="mt-3 text-sm text-slate-600">Director: Carlos Contreras Alvarez.</p>
+                    </div>
+                </div>
+
+                <div class="px-8 pb-8">
+                    <div
+                        class="rounded-2xl bg-slate-900 text-white p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <p class="text-white/85 italic">“La tradición es el alma de nuestra comunidad”.</p>
+                        <a href="#inicio"
+                            class="inline-flex items-center gap-2 rounded-xl bg-white text-slate-900 px-4 py-2 font-semibold hover:bg-slate-100 transition">
+                            Volver arriba
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 5v14M5 12l7-7 7 7" stroke="#0f172a" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating button -->
+    <button id="toTop"
+        class="fixed bottom-5 right-5 hidden items-center justify-center h-12 w-12 rounded-2xl bg-slate-900 text-white shadow-soft hover:bg-slate-800 transition z-50"
+        aria-label="Volver arriba">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 5v14M5 12l7-7 7 7" stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <footer class="py-10 text-center text-sm text-slate-500">
+        <p>© 2026 • Festividad Religiosa Virgen de la Candelaria • Aiza • Editorial Clean</p>
+    </footer>
+
+    <script>
+        // ==========================
+        // DATA (tu contenido)
+        // ==========================
+        const program = [
+            {
+                day: "Domingo 01 de Febrero del 2026",
+                events: [
+                    { time: "01:00 p.m.", description: "Recibimiento a la Orquesta 'Legendarios Guapos Internacionales' en el pueblo de Canchan" },
+                    { time: "01:30 p.m.", description: "Gran almuerzo en el pueblo Canchaense juntamente con la orquesta" },
+                    { time: "04:00 p.m.", description: "Continuación del viaje al pueblo de Aiza" },
+                    { time: "05:00 p.m.", description: "Recibimiento de la Orquesta 'Legendarios Guapos Internacionales' en el lugar tradicional 'Muchca' - Aiza" },
+                    { time: "07:00 p.m.", description: "Víspera de la Virgen Candelaria en la Iglesia del pueblo de Aiza" },
+                    { time: "08:00 p.m.", description: "Entrega de donaciones" },
+                    { time: "08:45 p.m.", description: "Visita a las mayoralas en sus respectivos domicilios por los mayordomos con el acompañamiento de la orquesta bajo la nota musical de noche buena, pascua y zapateo" },
+                    { time: "11:30 p.m.", description: "Elección de pascuas por los Mayordomos, mayoralas y público en general" }
+                ]
+            },
+            {
+                day: "Lunes 02 de Febrero del 2026",
+                events: [
+                    { time: "06:00 a.m.", description: "Salva de 21 camarretazos saludando a la venerada imagen de la Santísima Virgen de la Candelaria" },
+                    { time: "09:00 a.m.", description: "Desayuno ofrecido por los mayordomos de la tercera y Cuarta cuadrilla" },
+                    { time: "10:00 a.m.", description: "Recojo de mayoralas de sus respectivos domicilios al compás de la orquesta" },
+                    { time: "10:30 a.m.", description: "Misa ofrecida por los hijos de quienes en vida fueron María Florisa Payano Ángeles y Vidal Sanabria Casas" },
+                    { time: "11:00 a.m.", description: "Solemne misa en honor a la santísima Virgen de la Candelaria" },
+                    { time: "11:30 a.m.", description: "Procesión de la Virgen Candelaria por las principales calles" },
+                    { time: "01:00 p.m.", description: "Palabras de bienvenida por la presidenta de la junta directiva" },
+                    { time: "02:00 p.m.", description: "Presentación de los mayordomos del periodo 2026 al compás de una mulisa" },
+                    { time: "02:30 p.m.", description: "Presentación del repertorio musical de la Orquesta" },
+                    { time: "03:00 p.m.", description: "Danza de la pascua y música variada al compás de la orquesta" },
+                    { time: "04:00 p.m.", description: "Gran almuerzo ofrecido por los mayordomos al pueblo en general" },
+                    { time: "05:00 p.m.", description: "Continuación de la exhibición del baile costumbrista con la participación de los mejores sonajeros" }
+                ]
+            },
+            {
+                day: "Martes 03 de Febrero del 2026",
+                events: [
+                    { time: "06:00 a.m.", description: "Salva de 21 camarretazos, dando inicio al segundo día de la fiesta" },
+                    { time: "09:00 a.m.", description: "Desayuno ofrecido por los mayordomos a la orquesta y al público en general" },
+                    { time: "10:00 a.m.", description: "Recojo de mayoralas de sus respectivos domicilios por los mayordomos acompañados por la orquesta" },
+                    { time: "12:00 m.", description: "Baile de la pascua por las mayoralas encabezado por el pastor o guía demostrando el Compás peculiar" }
+                ]
+            },
+            {
+                day: "Miércoles 04 de Febrero del 2026",
+                events: [
+                    { time: "04:00 p.m.", description: "Gran almuerzo ofrecida por las mayoralas de la primera cuadrilla al público en general" },
+                    { time: "05:00 p.m.", description: "Continuación del baile de pascua por las hermosas mayoralas y mayordomos" },
+                    { time: "06:00 a.m.", description: "Salva de 21 camarretazos, saludando a la Santísima Virgen de la Candelaria" },
+                    { time: "09:00 a.m.", description: "Desayuno ofrecido por los mayordomos al público en general" },
+                    { time: "10:00 a.m.", description: "Concentración de las mayoralas en la puerta de la iglesia" },
+                    { time: "10:30 a.m.", description: "Partida a la loza deportiva de Muchca para realizar el concurso de danza de pascua" },
+                    { time: "11:00 a.m.", description: "Presentación de la Orquesta con su repertorio y baile propio" },
+                    { time: "11:30 a.m.", description: "Gran concurso de danza y zapateo con mejor vestimenta completa" },
+                    { time: "01:00 p.m.", description: "Baile general con canciones variadas al gusto del público" },
+                    { time: "04:00 p.m.", description: "Gran almuerzo ofrecido por las mayoralas de la segunda cuadrilla" },
+                    { time: "06:00 p.m.", description: "Continuación del baile de pascua y zapateo por las hermosas mayoralas y mayordomos" }
+                ]
+            },
+            {
+                day: "Jueves 05 de Febrero del 2026",
+                events: [
+                    { time: "06:00 a.m.", description: "Salva con 21 camarretazos, dando el saludo a la Sagrada Imagen Virgen de la Candelaria de Aiza" },
+                    { time: "08:00 a.m.", description: "Gran desayuno a la orquesta y público en general ofrecido por los mayordomos" },
+                    { time: "10:00 a.m.", description: "Concentración de las mayoralas en la puerta de la iglesia para partir a la romería de Tyulltuyta" },
+                    { time: "11:00 a.m.", description: "Romería en el campasanto en memoria de todos los aicinos y aicinas" },
+                    { time: "12:30 m.", description: "Baile general en la loza deportiva" },
+                    { time: "01:00 p.m.", description: "Cargada, plantado y adornado del Wachiwalito (árbol) por los padrinos" }
+                ]
+            },
+            {
+                day: "Viernes 06 de Febrero del 2026",
+                events: [
+                    { time: "06:00 a.m.", description: "Gran despedida a la Orquesta 'Legendarios Guapos Internacionales', colocando la 'Wallqa' (Collar) a cada uno de los integrantes de la Orquesta, por las primorosas mayoralas" },
+                    { time: "04:00 p.m.", description: "Gran almuerzo a la Orquesta y público en general ofrecido por los mayordomos 2026" },
+                    { time: "06:00 p.m.", description: "Baile general al son de la orquesta con las primorosas mayoralas (wallmichuñas)" },
+                    { time: "07:00 p.m.", description: "Inscripción de nuevos mayordomos" },
+                    { time: "08:00 p.m.", description: "Premiación a las mejores bailarinas, mejores vestimentas y sonajeros" },
+                    { time: "09:00 p.m.", description: "Proclamación de los nuevos mayordomos 2027" },
+                    { time: "10:00 p.m.", description: "Palabras de agradecimiento por los mayordomos 2026 al pueblo de Aiza y a los visitantes" },
+                    { time: "11:00 p.m.", description: "Gran Baile general y cortamante hasta las últimas consecuencias" }
+                ]
+            }
+        ];
+
+        const prizes = [
+            { category: "Adultos", first: "S/. 150.00", second: "S/. 100.00", third: "S/. 30.00", surprise: "Sorpresa" },
+            { category: "Señoritas", first: "S/. 300.00", second: "S/. 150.00", third: "S/. 30.00", surprise: "Sorpresa" },
+            { category: "Niñas", first: "S/. 100.00", second: "S/. 50.00", third: "S/. 30.00", surprise: "Sorpresa" },
+            { category: "Sonajeros Adultos", first: "S/. 150.00", second: "S/. 100.00", third: "S/. 30.00", surprise: "Sorpresa" },
+            { category: "Sonajeros Niños", first: "S/. 100.00", second: "S/. 50.00", third: "S/. 30.00", surprise: "Sorpresa" }
+        ];
+
+        const mayordomos = [
+            "Tomás Orellana y Carolina Vicente y Hermanos", "Pilar Angeles, Esposa y Nieto Edson C.",
+            "Eugenia Lermo y hija América Negrón", "Herder payano Angeles e hijos",
+            "Angel Luyo Flores esposa e hijos", "Teófila Angeles Payano e hijo Daniel Quino",
+            "Richard Payano Esposa e hijo", "Yenner Payano esposa e hija",
+            "Abel Granda esposa e hijas", "Sonia y Santa Manrique, esposo e hijas",
+            "Arnaldo Melgarejo e hijas", "Gino Fernando Vilcapuma y esposa",
+            "Cecilia Atanacio Valerio e hijos", "Adhemir Payano esposa e hijos",
+            "Ilda Pérez esposo e hijos", "Anastacio Melgarejo e hijos",
+            "Moises Payano esposa e hijos", "Jhon Jiny Sanabria e hijo",
+            "Benito Laura esposa e hijos", "Wilson Sanabria esposa e hija Thalia",
+            "Lily Sanabria esposo e hija Dayana e hijos", "Eduardo Orellana esposa e hijos",
+            "Landys Casas esposo e hijos", "Charles Payano y sobrina Talia",
+            "Noemí Payano y Antony Manrique y esposa", "Dany Vilca Negrón e hijas",
+            "Jesús Angeles esposa e hijos", "Napoleón Iturrizaga esposa e hijos",
+            "Magda Melgarejo Sanabria e hijos", "Nolverto Iturrizaga Casas, esposa e hijos",
+            "Leonor Payano esposo e hijos", "Nicolas Payano esposa e hijas"
+        ];
+
+        const mayoralas = [
+            "Leyssie Orellana", "Cleofina Angeles Cuevas", "Camila Andrea Quispe Payano",
+            "Ariana Sofia Sanabria", "Kiran Bardales Diaz", "Dayana Payano Sanabria",
+            "Flavia Sofia Sulca Melgarejo", "Kendra Remigio Cuevas", "Adriana Angeles Melgarejo",
+            "Rosmery Remigio Blaz", "Janeth Melgarejo Silvestre", "Joselin Guadalupe Melgarejo",
+            "Lucy Melgarejo Sanabria", "Andrea Sanabria Ramirez", "Martina Sanabria Ramirez",
+            "Clariza Sanabria Antonio", "Mabel Bruno Sanabria", "Rocio Vivas Sanabria",
+            "Luciana Aval Vivas", "Médaly Huamán Payano", "Malú Huamán Payano",
+            "Santa Sanabria Angeles", "Hermelinda Acevedo Angeles", "Yeny Sanabria Angeles",
+            "Yovana Huaman Acevedo", "Bernardina Huamán Acevedo", "Yéssica Huaman Acevedo",
+            "Karina Casanova Guadalupe", "Yeny Abarca Guadalupe", "Amalia Sanabria Payano",
+            "Marilin Sanabria Payano", "Ruth Angeles Castro", "Danzita Manrique Melgarejo",
+            "Ana Rosa Manrique Erasmo", "Arida Huamán Valerio", "Cecilia Huamán Valerio",
+            "Harumi Payano Flores", "Kahory Payano Flores", "Karito Evangelista Orellana",
+            "Erica Manrique Melgarejo", "Genoveva Huamán Melgarejo", "Yadira Ordoñez Sanabria",
+            "Yovana Payano Castillo", "Inés Valerio Payano", "Maritza Sanabria Payano",
+            "Rosa Atanacio Sanabria", "Nadia Atanacio Sanabria", "Judith Atanacio Sanabria",
+            "Mariela Manrique Erasmo", "Margot Manrique Vega", "Nelia Acevedo Angeles",
+            "Mayly Acevedo Manrique", "Abilia Payano Angeles", "Cristina Payano Negrón",
+            "Miley Payano Negrón", "Eslim Payano Negrón", "Claudia Adriana Manrique Ramírez",
+            "Yimil Castro Ramírez", "Camila Sanabria Ramírez", "Teodolinda Iturrizaga Sanabria",
+            "Kely Mateo De La Cruz", "Roxana Sanabria Antonio", "Liliana Mateo De La Cruz",
+            "Nayely Sanabria Arenas", "Nayeli Angeles Manrique", "Amalia Sanabria Payano",
+            "Obdulia Iturrizaga Sanabria", "Cintia Manrique Melgarejo", "Sandra Manrique Melgarejo",
+            "Sahory Bautista Payano", "Santa Isabel Sanabria Gamarra", "Escarllet Condori Mateo",
+            "Consuelo Huamán Casanova"
+        ];
+
+        const donors = {
+            cash: [
+                { name: "Román Sanabria Payano", amount: "50.00 soles" },
+                { name: "Luisa Diaz Payano", amount: "50.00 soles" },
+                { name: "Niño Scarleth Condori Mateo", amount: "100.00 soles" },
+                { name: "Jaime Belleza Sanabria", amount: "100.00 soles" },
+                { name: "Arlindo Belleza Castro", amount: "50.00 soles (pastor)" },
+                { name: "Flavia Sofia Sulca Melgarejo", amount: "50.00 soles" },
+                { name: "Rolando Nelson Huamán Casanova", amount: "50.00 soles" },
+                { name: "William Edison Huamán Casanova", amount: "50.00 soles" },
+                { name: "Filomena Placida Casanova Vda. de Huamán", amount: "50.00 soles" },
+                { name: "Flor Atúncar de Angeles", amount: "50.00 soles Para pastor Niño" },
+                { name: "Flor Atúncar de Angeles", amount: "100.00 soles (Comunera)" },
+                { name: "Franklin Angeles Espinoza", amount: "100.00 soles para mejor pastor Niño" },
+                { name: "Joven Jhamir Contreras C.", amount: "100.00 soles Mejor Bailarina Señorita" },
+                { name: "José Luis Hernández L.", amount: "100.00 soles Adulto Mayor" },
+                { name: "Jorge Olivos Melgarejo", amount: "50.00 soles" },
+                { name: "Juan Hipólito A.", amount: "Sorpresa" },
+                { name: "El Dulce Apurino", amount: "Sorpresa" },
+                { name: "El Amor V. Y.", amount: "Sorpresa" },
+                { name: "Familia Huamanlazo Sandoval", amount: "5 Docenas de Utensilios" },
+                { name: "Comercial Paola e Hijas", amount: "Sorpresa" },
+                { name: "Edgar Vivas Lermo", amount: "S/. 100.00" },
+                { name: "Miler Acevedo", amount: "1 Caja de Cerveza para la Orquesta" },
+                { name: "Partido Somos Perú", amount: "S/. 400.00" },
+                { name: "Jhon Sanabria Suárez", amount: "S/. 100.00 para la mejor vestimenta para niñas" },
+                { name: "Luis Fernando Casas Gutierrez y Esposa", amount: "S/. 100.00" }
+            ],
+            kind: [
+                { item: "Misa Central para la Virgen de la Candelaria" },
+                { item: "+ 1 Capa para la Virgen Pequeña" },
+                { item: "1 Saco de Arroz de 50 Kilos" },
+                { item: "1 Saco de Arroz de 50 Kilos" },
+                { item: "1 Costal de Papas de 100 kilos" },
+                { item: "1 Paquete de video" },
+                { item: "1 Paquete de video" },
+                { item: "1 Paquete de Fideo" },
+                { item: "1 Caja de Cerveza para la Orquesta" },
+                { item: "1 Paquete de Fideo" },
+                { item: "2 Docenas de Cohetes" },
+                { item: "2 Docenas de Cohetes" },
+                { item: "1 Paquete de Cohetes de cuatro Tiempos" },
+                { item: "Arreglo Floral" },
+                { item: "Cerveza para la Orquesta" },
+                { item: "1 Caja de Cerveza para la Orquesta" },
+                { item: "1 paquete de Fideos" },
+                { item: "Almuerzo para el Público presente y Orquesta" }
+            ]
+        };
+
+        const gallery = [
+            { src: "https://placehold.co/900x650/0b1220/ffffff?text=Tradiciones+Locales", caption: "Tradiciones locales" },
+            { src: "https://placehold.co/900x650/4f46e5/ffffff?text=Baile+de+la+Pascua", caption: "Baile de la Pascua" },
+            { src: "https://placehold.co/900x650/0ea5e9/0b1220?text=Procesion+Religiosa", caption: "Procesión religiosa" },
+            { src: "https://placehold.co/900x650/1e293b/ffffff?text=Comunidad+de+Aiza", caption: "Comunidad de Aiza" },
+            { src: "https://placehold.co/900x650/334155/ffffff?text=Iglesia+de+Aiza", caption: "Iglesia de Aiza" },
+            { src: "https://placehold.co/900x650/0f172a/ffffff?text=Vestimenta+Tradicional", caption: "Vestimenta tradicional" }
+        ];
+
+        // ==========================
+        // RENDER HELPERS
+        // ==========================
+        const el = (tag, cls, html) => {
+            const n = document.createElement(tag);
+            if (cls) n.className = cls;
+            if (html !== undefined) n.innerHTML = html;
+            return n;
+        };
+
+        function renderProgram() {
+            const wrap = document.getElementById("programWrap");
+            wrap.innerHTML = "";
+
+            program.forEach((d, idx) => {
+                const details = el("details", "card shadow-soft overflow-hidden", "");
+                if (idx === 0) details.open = true;
+
+                const summary = el("summary", "cursor-pointer list-none px-6 py-5 flex items-center justify-between gap-4 bg-slate-50 hover:bg-slate-100 transition", `
+          <div>
+            <p class="text-xs text-slate-500">Día ${idx + 1}</p>
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900">${d.day}</h3>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-semibold bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full border border-indigo-100">
+              ${d.events.length} actividades
+            </span>
+            <span class="h-10 w-10 rounded-2xl bg-slate-900 text-white flex items-center justify-center group-open:rotate-180 transition">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9l6 6 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        `);
+
+                const content = el("div", "px-6 pb-6", "");
+                const ul = el("ul", "mt-3 space-y-3", "");
+
+                d.events.forEach(ev => {
+                    const li = el("li", "rounded-2xl bg-slate-50 border border-slate-200 p-4", `
+            <div class="flex flex-col sm:flex-row gap-3 sm:items-start">
+              <div class="min-w-[120px]">
+                <span class="inline-flex items-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-slate-900 border border-slate-200">
+                  ${ev.time}
+                </span>
+              </div>
+              <div class="text-slate-700 leading-relaxed">${ev.description}</div>
+            </div>
+          `);
+                    ul.appendChild(li);
+                });
+
+                content.appendChild(ul);
+                details.appendChild(summary);
+                details.appendChild(content);
+                wrap.appendChild(details);
+            });
+        }
+
+        function renderPrizes() {
+            const wrap = document.getElementById("prizesWrap");
+            wrap.innerHTML = "";
+            prizes.forEach(p => {
+                const card = el("div", "card shadow-soft p-6", `
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold text-slate-900">${p.category}</h3>
+            <span class="h-8 w-8 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center">
+              <span class="h-2 w-2 rounded-full bg-indigo-600"></span>
+            </span>
+          </div>
+
+          <div class="mt-5 space-y-2 text-sm">
+            <div class="flex justify-between text-slate-700"><span>1er puesto</span><span class="font-semibold">${p.first}</span></div>
+            <div class="flex justify-between text-slate-700"><span>2do puesto</span><span class="font-semibold">${p.second}</span></div>
+            <div class="flex justify-between text-slate-700"><span>3er puesto</span><span class="font-semibold">${p.third}</span></div>
+            <div class="pt-3 mt-3 border-t border-slate-200 flex justify-between">
+              <span class="text-slate-600">Sorpresa</span>
+              <span class="font-semibold text-indigo-700">${p.surprise}</span>
+            </div>
+          </div>
+        `);
+                wrap.appendChild(card);
+            });
+        }
+
+        function renderNames(list, wrapId, countId) {
+            const wrap = document.getElementById(wrapId);
+            wrap.innerHTML = "";
+            document.getElementById(countId).textContent = `${list.length} integrantes`;
+
+            list.forEach(name => {
+                const item = el("div", "rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-700", `
+          <span class="inline-flex items-start gap-2">
+            <span class="mt-2 h-2 w-2 rounded-full bg-indigo-600"></span>
+            <span>${name}</span>
+          </span>
+        `);
+                wrap.appendChild(item);
+            });
+        }
+
+        function renderDonations() {
+            const cashWrap = document.getElementById("cashWrap");
+            cashWrap.innerHTML = "";
+            document.getElementById("cashCount").textContent = `${donors.cash.length} registros`;
+
+            donors.cash.forEach(d => {
+                cashWrap.appendChild(el("div", "flex items-start justify-between gap-4 rounded-2xl bg-slate-50 border border-slate-200 p-4", `
+          <div class="text-sm text-slate-700">
+            <p class="font-semibold text-slate-900">${d.name}</p>
+          </div>
+          <div class="text-sm font-semibold text-indigo-700 whitespace-nowrap">${d.amount}</div>
+        `));
+            });
+
+            const kindWrap = document.getElementById("kindWrap");
+            kindWrap.innerHTML = "";
+            document.getElementById("kindCount").textContent = `${donors.kind.length} registros`;
+
+            donors.kind.forEach(k => {
+                kindWrap.appendChild(el("div", "rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3 text-sm text-slate-700", `
+          <span class="inline-flex items-start gap-2">
+            <span class="mt-2 h-2 w-2 rounded-full bg-sky-500"></span>
+            <span>${k.item}</span>
+          </span>
+        `));
+            });
+        }
+
+        function renderGallery() {
+            const wrap = document.getElementById("galleryWrap");
+            wrap.innerHTML = "";
+            gallery.forEach(g => {
+                wrap.appendChild(el("div", "group card shadow-soft overflow-hidden", `
+          <div class="relative">
+            <img src="${g.src}" alt="${g.caption}" class="w-full h-64 object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/55 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+            <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition">
+              <div class="bg-white/90 backdrop-blur rounded-2xl px-4 py-3 border border-slate-200">
+                <p class="text-sm font-semibold text-slate-900">${g.caption}</p>
+              </div>
+            </div>
+          </div>
+        `));
+            });
+        }
+
+        // ==========================
+        // UI: Menu, active links, progress, reveal
+        // ==========================
+        function setupNav() {
+            const btn = document.getElementById("menuBtn");
+            const menu = document.getElementById("mobileMenu");
+            btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+
+            // Close mobile menu on click
+            document.querySelectorAll("[data-nav]").forEach(a => {
+                a.addEventListener("click", () => menu.classList.add("hidden"));
+            });
+
+            // Active section highlight
+            const navLinks = Array.from(document.querySelectorAll(".navlink"));
+            const sectionIds = ["inicio", "invitacion", "programa", "premios", "mayordomia", "donaciones", "galeria", "contacto"];
+            const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+            const setActive = (id) => {
+                navLinks.forEach(l => {
+                    const href = l.getAttribute("href");
+                    const isActive = href === `#${id}`;
+                    if (isActive) {
+                        l.classList.add("bg-indigo-600", "text-white");
+                        l.classList.remove("text-slate-700");
+                    } else {
+                        l.classList.remove("bg-indigo-600", "text-white");
+                        l.classList.add("text-slate-700");
+                    }
+                });
+            };
+
+            const io = new IntersectionObserver((entries) => {
+                const visible = entries
+                    .filter(e => e.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+                if (visible) setActive(visible.target.id);
+            }, { rootMargin: "-30% 0px -60% 0px", threshold: [0.15, 0.25, 0.35] });
+
+            sections.forEach(s => io.observe(s));
+        }
+
+        function setupProgramControls() {
+            const expand = document.getElementById("expandAll");
+            const collapse = document.getElementById("collapseAll");
+            expand.addEventListener("click", () => document.querySelectorAll("#programWrap details").forEach(d => d.open = true));
+            collapse.addEventListener("click", () => document.querySelectorAll("#programWrap details").forEach(d => d.open = false));
+        }
+
+        function setupProgressAndTop() {
+            const progress = document.getElementById("progress");
+            const toTop = document.getElementById("toTop");
+
+            const onScroll = () => {
+                const h = document.documentElement;
+                const sc = h.scrollTop;
+                const max = h.scrollHeight - h.clientHeight;
+                const pct = max ? (sc / max) * 100 : 0;
+                progress.style.width = pct + "%";
+
+                if (sc > 600) {
+                    toTop.classList.remove("hidden");
+                    toTop.classList.add("flex");
+                } else {
+                    toTop.classList.add("hidden");
+                    toTop.classList.remove("flex");
+                }
+            };
+
+            window.addEventListener("scroll", onScroll, { passive: true });
+            onScroll();
+
+            toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+        }
+
+        function setupReveal() {
+            const nodes = document.querySelectorAll("[data-reveal]");
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add("reveal");
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.18 });
+            nodes.forEach(n => io.observe(n));
+        }
+
+        // ==========================
+        // INIT
+        // ==========================
+        renderProgram();
+        renderPrizes();
+        renderNames(mayordomos, "mayordomosWrap", "mayordomosCount");
+        renderNames(mayoralas, "mayoralasWrap", "mayoralasCount");
+        renderDonations();
+        renderGallery();
+
+        setupNav();
+        setupProgramControls();
+        setupProgressAndTop();
+        setupReveal();
+    </script>
+</body>
+
+</html>
+``
